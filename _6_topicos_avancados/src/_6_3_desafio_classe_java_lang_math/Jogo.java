@@ -10,15 +10,10 @@ public class Jogo {
         numerosSorteados = new int[QUANTIDADE_NUMEROS];
 
         for (int i = 1; i <= QUANTIDADE_NUMEROS; i++){
-            //gera número aleatório, arredonda e converte para inteiro
-            int numeroSorteado = (int) Math.round(Math.random() * NUMERO_MAXIMO);
-
-            //verifica se número ainda não foi sorteado e não é 0
+            int numeroSorteado = (int) Math.round(Math.random() * NUMERO_MAXIMO)
             if(!jaFoiSorteado(numeroSorteado) && numeroSorteado != 0){
-                //adiciona o número sorteado no array de números sorteados
                 numerosSorteados[i-1] = numeroSorteado;
             } else {
-                //decrementa i para refazer o sorteio da mesma posição
                 i--;
             }
         }
@@ -28,9 +23,7 @@ public class Jogo {
         for (int numeroSorteado : numerosSorteados){
             System.out.println(numeroSorteado + " ");
         }
-        //quebra de linha
         System.out.println();
-
     }
 
     private boolean jaFoiSorteado(int numero) {
